@@ -20,10 +20,21 @@
 
                 let paises = document.getElementById('inome')
                 let div = document.getElementById('pais')
+                let country = (paises.value)
+                let res = country
 
-                let res = paises
+                div.innerHTML = `<p> Seu País de origem é: <strong>"${res}"</strong> </p>`
 
-                div.innerHTML = `<p> Você mora no ${res}, você não é <strong>"ESTRANGEIRO"</strong> </p>`
+                if (country == 'Brasil') {
+
+                    div.innerHTML += `<p> Você mora no ${res}, você não é <strong>"ESTRANGEIRO"</strong> </p>`
+
+                }
+
+                else {
+
+                    div.innerHTML += `<p> Você mora no ${res}, você é <strong>"ESTRANGEIRO"</strong> </p>`
+                }
             }
         </script>
 </body>
