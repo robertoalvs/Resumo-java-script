@@ -5,19 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>if and else - condições</title>
+
+    <style>
+
+        body {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        input {
+
+            margin-top: 10px;
+            padding: 2px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        fieldset {
+
+            width: 650px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: rgba(255, 228, 196, 0.338);
+        }
+
+        .button {
+
+            width: 85px;
+            margin-top: 20px;
+            margin-left: 640px;
+        }
+
+        #res {
+
+            border: 2px solid black;
+            width: 600px;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 1px 1px 1px 1px black;
+            background-color: rgba(137, 43, 226, 0.259);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+
 </head>
+
 <body>
         <h1>TESTE para prova Detran</h1>
 
         <fieldset>
             <legend>Prova Detran</legend>
 
-            Digite seu nome: <input type="text" name="nome" id="inome">
-            Digite sua idade: <input type="number" name="nuum" id="inuum">
-            <input type="button" value="Testar">
+            Digite seu nome: <input type="text" name="nome" id="inome"> <br>
+            Digite sua idade: <input type="number" name="nuum" id="inuum"><br>
+            <input class="button" type="button" value="Testar" onclick="detran()">
 
         </fieldset>
 
         <div id="res"></div>
+
+        <script>
+
+            function detran() {
+
+                let nome = document.getElementById('inome')
+                let idade = document.getElementById('inuum')
+                let divres = document.getElementById('res')
+
+                let inputnome = (nome.value)
+                let inputnuum = Number(idade.value)
+
+                let resnome = inputnome
+                let residade = inputnuum
+                
+                divres.innerHTML = ` <p> Sua nome é: <strong>${resnome}</strong> </p>`
+                divres.innerHTML += ` <p> Sua idade é: <strong>${residade}</strong> </p>`
+
+                if(residade > 17){
+
+                    divres.innerHTML +=`<p> <strong>Parabéns!!!</strong> você tem a idade mínima, <strong>'Prova Liberada.'</strong> </p>`
+                }
+
+                else {
+
+                    divres.innerHTML +=`<p> <strong>Infelizmente</strong> você não tem a idade mínima, <strong>'prova Negada.'</strong> Volte ano que vem.</p>`
+                }
+            }
+        </script>
 </body>
 </html>
